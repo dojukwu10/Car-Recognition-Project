@@ -1,28 +1,24 @@
 import logo from './logo.svg';
-import './App.css';
-import cameraIcon from './camera-icon.png'; // Import the image file
-import background from './background.jpg';
+
+import { Link } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Camera from './pages/Camera'
+import Home from './pages/Home';
+
+
 
 
 
 function App() {
   return (
-    
-      
-    
-    <div className="buttonContainer">
-          
-
-     <button className="choice">
-      Take Photo
-    </button>
-
-    <button className="choice">
-      Gallery
-    </button>
-
-    </div>
-
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home/>} />
+          <Route path="/home" element={<Home/>} />
+          <Route path="/camera" element={<Camera/>} />
+        </Routes>
+    </BrowserRouter>
   );
 }
 

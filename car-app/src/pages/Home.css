@@ -2,14 +2,14 @@
   display: flex;
   flex-direction: column; /* Stack elements vertically */
   margin-top: 50%;
-  background-image: "./background.jpg";
+  background-image: "../pages/background.jpg";
 
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-image: url('./background.jpg');
+  background-image: url('../images/background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -20,13 +20,15 @@ body {
   width: 50%;
   margin-left: 27%;
   margin-bottom: 5px; /* Adjust the margin between flex items */
-  border-radius: 9%;
+  border-radius: 4px;
   margin-top: 10%;
   height: 155px;
   display: flex;
   align-items: center; /* Align content vertically */
   justify-content: center; /* Center content horizontally */
   background-color: rgb(255, 80, 162);
+  border: 2px solid rgb(255, 255, 255);
+  
 
 }
 
