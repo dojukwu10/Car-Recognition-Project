@@ -1,30 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import {Camera} from 'expo-camera'
+import CameraButton from '../Components/CameraButton';
 
-function Camera() {
+
+function CameraPage() {
+
+  const [hasCamPermission, setHasCamPermission] = useState(null);
+  useEffect(() => {
+    (async () => {
+      const camPermission = await Camera.requestCameraPermissionsAsync();
+      setHasCamPermission(camPermission === 'granted');
+  })();
+}, [])
+
+
   return (
-    <View style={styles.buttonContainer}>
-      <TouchableOpacity style={styles.choice}>
-        <Text>Coolio</Text>
-      </TouchableOpacity>
+    <View style={{ flex: 1 }}>
+      <Camera style={{ flex: 1 }} type={Camera.Constants.Type.back} >
+      
+      </Camera>  
+      <View style={{backgroundColor: 'black'}}>
+        <CameraButton/>
+        </View>      
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  buttonContainer: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  choice: {
-    backgroundColor: 'rgb(255, 80, 162)',
-    borderRadius: 4,
-    borderWidth: 2,
-    borderColor: 'rgb(255, 255, 255)',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-  },
+ 
 });
 
-export default Camera;
+export default CameraPage;
