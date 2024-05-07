@@ -1,11 +1,16 @@
-import { TouchableOpacity, StyleSheet, View } from "react-native";
+import { TouchableOpacity, StyleSheet, View, Alert } from "react-native";
 import {Entypo} from "@expo/vector-icons"
 
 export default function CameraButton(){
+  const handlePress = () => {
+    // Define the action you want to perform when the button is pressed
+    Alert.alert("Button Pressed");
+    
+  };
 
         return(
             <View style={styles.container}>
-            <TouchableOpacity style={styles.circle}>
+      <TouchableOpacity style={styles.circle} onPress={handlePress}>
                 <Entypo name="camera" size={28} color={"#FFFFFF"}></Entypo>
             </TouchableOpacity>
             </View>
