@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Camera from './pages/Camera';
-import Home from './pages/Home';
+import Camera from './carApp/pages/Camera';
+import Home from './carApp/pages/Home';
 
 const Stack = createNativeStackNavigator();
 
